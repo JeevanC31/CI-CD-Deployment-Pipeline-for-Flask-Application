@@ -26,7 +26,4 @@ jobs:
         docker tag flask-app:latest jeevanc31/flask-app:latest
         docker push jeevanc31/flask-app:latest
 
-    - name: Deploy to Kubernetes
-      run: |
-        echo "${{ secrets.KUBECONFIG }}" > kubeconfig.yaml
-        kubectl --kubeconfig=kubeconfig.yaml apply -f k8s/deployment.yaml --validate=false
+    
